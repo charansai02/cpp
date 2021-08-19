@@ -1,0 +1,46 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+//a number is said to be armstrong if the sum of (digit^(no of digits)) is equal to the number. 
+// eg., n=153, sum=1^3 + 5^3 + 3^3 = 1+ 125 + 27 = 153, i.e., n
+// in the above example, 3 is the number of digits.
+bool isArmstrong(int n, int nod)
+{
+    int t=n, digPowNod, sumofDigPowNod;
+    while(t!=0)
+    {
+        
+        int r=t%10;
+        digPowNod=pow(r,nod);
+        sumofDigPowNod+=digPowNod;
+        t/=10;
+    }
+    cout << "Sum of each (digit^no_of_digits)= "<< sumofDigPowNod <<endl;
+    if(sumofDigPowNod==n)
+    return true;
+    else
+    return false;
+}
+
+//method to count no of digits.
+int countDigit(int n)
+{
+    int count=0;
+    while(n!=0)
+    {
+        n/=10;
+        count++;
+    }
+    return count;
+}
+int main()
+{
+   int n, c=countDigit(n);
+   cout << "Enter number: ";
+   cin <<n;
+   if(isArmstrong(n,c))
+   cout << n << " is Armstrong.";
+   else
+   cout << n<<" is not armstrong.";
+  
+}
