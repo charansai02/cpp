@@ -1,9 +1,10 @@
 #include <iostream>
 using namespace std;
 
+//a number is said to be prime if the number has exactly 2 factors(1 and itself) and not more or less than 2. 
 bool isPrime(int num)
 {
-    if(num<=1)
+    if(num<=1)  //first prime number is 2. So, numbers less than 2 are not primes.
     return false;
     else{
     for(int i=2; i<=num/2; i++)
