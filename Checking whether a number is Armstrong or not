@@ -6,17 +6,17 @@ using namespace std;
 // in the above example, 3 is the number of digits.
 bool isArmstrong(int n, int nod)
 {
-    int t=n, digPowNod, sumofDigPowNod;
+    int t=n, cube, sumofcubes;
     while(t!=0)
     {
         
         int r=t%10;
-        digPowNod=pow(r,nod);
-        sumofDigPowNod+=digPowNod;
+        cube=pow(r,nod);
+        sumofcubes+=cube;
         t/=10;
     }
-    cout << "Sum of each (digit^no_of_digits)= "<< sumofDigPowNod <<endl;
-    if(sumofDigPowNod==n)
+    cout << "Sum of each (digit^"<<nod <<")="<< sumofcubes <<endl;
+    if(sumofcubes==n)
     return true;
     else
     return false;
@@ -35,9 +35,11 @@ int countDigit(int n)
 }
 int main()
 {
-   int n, c=countDigit(n);
+   int n; 
    cout << "Enter number: ";
-   cin <<n;
+   cin >>n;
+   int c=countDigit(n);
+   cout << "No of digits = "<< c << endl;
    if(isArmstrong(n,c))
    cout << n << " is Armstrong.";
    else
