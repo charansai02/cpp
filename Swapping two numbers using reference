@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+
+void swap(int &x, int &y)
+{
+    int z=x;
+    x=y;
+    y=z;
+}
+int main()
+{
+    int f=10, l=20;
+    cout << "Numbers before: \n";
+    cout << "First = " << f << ", Second = " << l;
+    
+    swap(f,l);
+    cout << "\nNumbers after: \n";
+    cout << "First = " << f << ", Second = " << l;
+}
