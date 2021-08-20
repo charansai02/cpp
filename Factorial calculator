@@ -1,0 +1,23 @@
+#include <iostream>
+
+using namespace std;
+
+//factorial is n*(n-1)*(n-2)*(n-3)*...(2)*(1)
+int factorialCalc(int n)
+{
+    int fact=1;
+    while(n!=0)
+    {
+        fact*=n;
+        n--;
+    }
+    return fact;
+}
+int main()
+{
+    int n;
+    cout<<"Enter number: ";
+    cin >> n;
+    cout << factorialCalc(n);
+    return 0;
+}
