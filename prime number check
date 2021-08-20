@@ -11,7 +11,6 @@ bool isPrime(int num)
     {
         if(num%i==0)
         return false;
-        break;
     }
     return true;
     }
