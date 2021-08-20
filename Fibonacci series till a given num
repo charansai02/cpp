@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+
+//fibonacci series: nth=(n-1)th + (n-2)th
+int main()
+{
+    int a=0, b=1, fib, n;
+    cout <<"Enter n: ";
+    cin >>  n;
+    cout <<a<<" "<<b<<" ";
+    while(fib<=n)
+    {
+        fib=a+b;
+        if(fib<=n)
+        cout << fib <<" ";
+        a=b;
+        b=fib;
+    }
+}
