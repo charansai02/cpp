@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+
+//a string is said to be palindrome if the reversed string is equal to the given string.
+bool isPalindrome(string s1)
+{
+    string s2=s1;
+    int n=s2.length();
+    
+    //loop to reverse a string
+    for (int i = 0; i < n / 2; i++)
+        swap(s2[i], s2[(n-1)-i]);
+    
+    if(s1==s2)
+        return true;
+    else
+        return false;
+}
+int main()
+{
+    string str;
+    cout<<"Enter a string: ";
+    cin >> str;
+    if(isPalindrome(str))
+    {
+        cout << str <<" is a palindrome.";
+    }
+    else
+    {
+        cout << str <<" is not a palindrome.";
+    }
+    return 0;
+}
